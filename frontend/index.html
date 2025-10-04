@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LinkChat</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="app" class="app">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <div class="brand"><span class="brand-title">LinkChat</span></div>
+        <button id="menuBtn" class="icon-btn" title="Menú" aria-label="Abrir menú">⋮</button>
+        <div id="menuPanel" class="menu-panel hidden">
+          <button data-action="add-contact">Agregar contacto</button>
+          <button data-action="create-group">Crear grupo</button>
+          <button data-action="profile">Ver/Editar perfil</button>
+          <button data-action="settings">Configuraciones</button>
+          <button data-action="logout" class="danger">Cerrar sesión</button>
+        </div>
+      </header>
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Buscar chats o usuarios..." />
+      </div>
+      <div id="chatList" class="chat-list"></div>
+    </aside>
+
+    <main class="chat">
+      <header class="chat-header">
+        <button id="toggleSidebarBtn" class="icon-btn only-mobile" title="Menú" aria-label="Abrir lista de chats">☰</button>
+        <div class="chat-peer">
+          <div id="peerAvatar" class="avatar">?</div>
+          <div>
+            <div id="peerName" class="peer-name">Selecciona un chat</div>
+            <div id="peerStatus" class="peer-status">—</div>
+          </div>
+        </div>
+        <div class="chat-actions">
+          <button id="pinToggle" class="icon-btn" title="Ver mensajes fijados" aria-label="Ver mensajes fijados">📌</button>
+          <button id="favoriteChatBtn" class="icon-btn" title="Marcar como favorito" aria-label="Marcar como favorito">☆</button>
+          <button id="searchChatBtn" class="icon-btn" title="Buscar en conversación" aria-label="Buscar en conversación">🔍</button>
+          <button id="editGroupBtn" class="icon-btn hidden" title="Editar grupo" aria-label="Editar grupo">⚙️</button>
+          <button id="leaveGroupBtn" class="icon-btn hidden" title="Salir del grupo" aria-label="Salir del grupo">🚪</button>
+        </div>
+      </header>
+
+      <section id="messageList" class="message-list"></section>
+
+      <footer class="composer">
+        <button id="emojiBtn" class="icon-btn" title="Emoji" aria-label="Insertar emoji">😊</button>
+        <input id="messageInput" type="text" placeholder="Escribe un mensaje" />
+        <input id="fileInput" type="file" class="hidden" />
+        <button id="attachBtn" class="icon-btn" title="Adjuntar" aria-label="Adjuntar archivo">📎</button>
+        <button id="sendBtn" class="primary-btn" title="Enviar" aria-label="Enviar mensaje">Enviar</button>
+      </footer>
+    </main>
+    <div id="appOverlay" class="app-overlay hidden"></div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modalRoot"></div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

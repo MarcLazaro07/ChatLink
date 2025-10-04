@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LinkChat">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0066ff"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="linkGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0066ff"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Caja de texto (input) -->
+  <rect x="8" y="18" width="48" height="28" rx="8" fill="#ffffff"/>
+
+  <!-- Símbolo de enlace dentro de la caja -->
+  <g fill="none" stroke="url(#linkGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- eslabón izquierdo -->
+    <path d="M24 32 h7 a6 6 0 0 0 0 -12 h-7 a6 6 0 1 0 0 12"/>
+    <!-- eslabón derecho -->
+    <path d="M40 32 h-7 a6 6 0 0 1 0 -12 h7 a6 6 0 1 1 0 12"/>
+  </g>
+
+  <!-- Sutil cursor de texto a la izquierda para reforzar 'caja de texto' -->
+  <rect x="12.5" y="22" width="1.5" height="20" rx="0.75" fill="#cbd5e1"/>
+</svg>
